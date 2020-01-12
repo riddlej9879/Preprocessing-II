@@ -1,1 +1,11 @@
 // Mixins in here
+.display-flex (@justify, @align) {
+    display: flex;
+    justify-content: @justify;
+    align-items: @align;
+}
+
+.margin-padding(@m, @p) {
+    margin: @m;
+    padding: @p;
+}

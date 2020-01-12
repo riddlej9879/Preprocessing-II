@@ -1,1 +1,99 @@
 // Follow the order in the readme
+@import "variables.less";
+@import "mixins.less";
+@import "reset.less";
+@import "global.less";
+@import "navigation.less";
+@import "footer.less";
+@import "home-page.less";
+
+//  Section set for transition
+//      Incomplete
+.middle {
+    // transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%)
+}
+.text {
+    background-color: #4CAF50;
+    color: @main-bg;
+    font-size: 1.6rem;
+    padding: 16px 32px;
+  }
+  .img-content:hover .image {
+    transition: .5s ease;
+    opacity: .3;
+  }
+  
+  .img-content:hover .middle {
+    transition: .5s ease;
+    opacity: 1;
+  }
+//  End transition
+
+.destination {
+    .btn {
+        .margin-padding(3%, 5%);
+        text-align: center;
+        font-size: 1.8rem;
+        color: @main-bg;
+        background-color: @button-bg;
+        border-radius: 10px;
+    }
+}
+
+.home {
+    @media @tablet {
+        .content-section {
+            .display-flex(flex-start, flex-start);
+            flex-direction: column;
+            max-width: @mobile-width;
+            .margin-padding(0, 0);
+            .text-content {
+                max-width: @mobile-width;
+                width: 100%;
+            }
+            .img-content {
+                width: @mobile-width;
+                .margin-padding(0, 0);
+            }
+        }
+        //  Need this section otherwise the images are too narrow
+        //  Could not figure out why. ???
+        img {
+            width: @mobile-width;
+        }
+        .inverse-content {
+            display: flex;
+            flex-direction: column-reverse;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+        }
+        div {
+            margin: 1% 0;
+        }
+
+        .content-destination {
+            .display-flex(flex-start, flex-start);
+            flex-direction: column;
+            max-width: @mobile-width;
+            width: 100%;
+        }
+
+        .content-pick {
+            .display-flex(center, center);
+            flex-direction: column;
+            .destination {
+                max-width: @mobile-width;
+                width: 80%;
+            }
+            .btn {
+                .margin-padding(0, 4%);
+            }
+        }
+    }
+}

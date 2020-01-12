@@ -1,1 +1,19 @@
 // Navigation Styles here
+.center {
+    .display-flex(center, center);
+    flex-direction: column;
+
+    .intro-section {
+        max-width: 800px;
+        width: 100%;
+        border-bottom: 2px dashed #C0C0C0;
+        margin: 2% auto;
+    }
+    img {
+        @media @tablet {
+            max-width: @mobile-width;
+        }
+        max-width: 800px;
+        width: 100%;
+    }
+}
